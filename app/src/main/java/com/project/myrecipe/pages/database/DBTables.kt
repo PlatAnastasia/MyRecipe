@@ -1,31 +1,54 @@
 package com.project.myrecipe.pages.database
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
-@Entity(tableName = "recipes", primaryKeys = ["id"])
+@Entity(tableName = "recipes")
  class Recipe :Serializable {
+    @PrimaryKey(autoGenerate = true)
     var id: Int =  0
     var title: String = ""
+    var ingredients: String = ""
     var description: String? = null
-    var ingredients: List<String> = emptyList()
     var isFavourite:Boolean = false
 
     constructor()
 
     constructor(
-        id:Int,
         title:String,
         description:String?,
-        ingredients:List<String>,
-        isFavourite:Boolean
+        isFavourite:Boolean,
+         ingredients: String
     ){
-        this.id= id
         this.title=title
         this.description=description
         this.ingredients=ingredients
         this.isFavourite=isFavourite
     }
  }
+
+@Entity(tableName = "ingredients", primaryKeys = ["id","title"])
+class Ιngredients :Serializable {
+    var id: Int =  0
+    var title: String = ""
+    var ingredients: String = ""
+
+
+    constructor()
+
+    constructor(
+        id:Int,
+        title:String,
+        ingredients:String,
+
+    ){
+        this.id= id
+        this.title=title
+        this.ingredients=ingredients
+
+    }
+}
+
 
 

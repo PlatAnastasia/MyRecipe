@@ -38,7 +38,7 @@
     <Button
         android:id="@+id/btnFavorites"
         android:layout_width="0dp"
-        android:drawableLeft="@drawable/baseline_favorite_border_24"
+        android:drawableLeft="@android:drawable/btn_star"
         android:backgroundTint="@color/green"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

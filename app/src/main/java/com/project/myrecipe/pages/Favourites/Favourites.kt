@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.project.myrecipe.R
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class Favourites : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

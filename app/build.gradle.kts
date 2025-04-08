@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -8,6 +10,7 @@ plugins {
 android {
     namespace = "com.project.myrecipe"
     compileSdk = 34
+
 
     defaultConfig {
         applicationId = "com.project.myrecipe"
@@ -31,6 +34,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures{
+        viewBinding = true
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -60,6 +67,29 @@ dependencies {
     //Navigation Components
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    // WorkManager dependency
+    implementation ("androidx.work:work-runtime:2.7.1")
+    // Optional: For Kotlin Coroutines support in WorkManager
+    implementation ("androidx.work:work-runtime-ktx:2.7.1")
 
+    // Hilt for dependency injection
+    implementation ("com.google.dagger:hilt-android:2.42") // or latest version
+    kapt ("com.google.dagger:hilt-android-compiler:2.42") // or latest version
+
+    // ViewModel and Hilt integration
+    kapt ("androidx.hilt:hilt-compiler:1.0.0") // or latest version
+
+    // Hilt WorkManager integration (if you're using WorkManager with Hilt)
+    implementation ("androidx.hilt:hilt-work:1.0.0") // or latest version
+
+    // Hilt for testing (optional, for testing)
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.42") // or latest version
+    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:2.42")
+    // Hilt for WorkManager Integration
+    implementation ("androidx.hilt:hilt-work:1.0.0")
+    // WorkManager
+    implementation ("androidx.work:work-runtime-ktx:2.7.1") // or latest version
+    // WorkManager Hilt integration
+    implementation ("androidx.hilt:hilt-work:1.0.0") // or latest version
 
 }
