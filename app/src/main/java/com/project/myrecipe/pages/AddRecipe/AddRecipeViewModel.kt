@@ -20,6 +20,7 @@ class AddRecipeViewModel @Inject constructor(
 
     private val _error = MutableStateFlow<String?>(null)
     val error: StateFlow<String?> = _error
+
     fun saveRecipe(title:String,descr:String?,ingr:String,isFavourite:Boolean) {
         viewModelScope.launch {
             if (title != null) {
@@ -38,6 +39,25 @@ class AddRecipeViewModel @Inject constructor(
                     }
                 }
             }
+        }
+
+    }
+
+    fun getRecipeUsingID(id:Int) {
+        viewModelScope.launch {
+                AddRecipeInteractor.getRecipeUsingID(id).collect {
+                    when (it) {
+                        is GetRecipe.Empty -> {
+                            _error.value = it.error
+                            _recipe.value = null
+                        }
+                        is GetRecipe.Success -> {
+                            _recipe.value = it.recipe
+                            _error.value = null
+                        }
+                   }
+                }
+
         }
 
     }

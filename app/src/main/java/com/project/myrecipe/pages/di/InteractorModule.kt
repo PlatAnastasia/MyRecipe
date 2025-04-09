@@ -2,6 +2,8 @@ package com.project.myrecipe.pages.di
 
 import com.project.myrecipe.pages.AddRecipe.AddRecipeInteractor
 import com.project.myrecipe.pages.AddRecipe.AddRecipeInteractorImpl
+import com.project.myrecipe.pages.Recipes.RecipesInteractor
+import com.project.myrecipe.pages.Recipes.RecipesInteractorImpl
 import com.project.myrecipe.pages.mainMenu.MainMenuInteractor
 import com.project.myrecipe.pages.mainMenu.MainMenuInteractorImpl
 import dagger.Module
@@ -20,9 +22,9 @@ class InteractorModule {
     fun provideAddRecipeInteractor(impl: AddRecipeInteractorImpl): AddRecipeInteractor = impl
 
 
-//    @Provides
-//    fun provideRecipesInteractor(impl: RecipesInteractorImpl):RecipesInteractor = impl
-//
+    @Provides
+    fun provideRecipesInteractor(impl: RecipesInteractorImpl): RecipesInteractor = impl
+
 //    @Provides
 //    fun provideFavouritesInteractor(impl: FaivouritesInteractorImpl):FaivouritesInteractor = impl
 

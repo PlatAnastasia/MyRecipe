@@ -3,6 +3,7 @@ package com.project.myrecipe.pages.database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
+import androidx.room.Query
 
 @Dao
 interface RecipesDao {
@@ -11,6 +12,17 @@ interface RecipesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNewRecipe(recipe:Recipe)
 
-//    @Insert(onConflict = OnConflictStrategy.REPLACE)
-//    suspend fun insertIngredients(ingr:Ιngredients)
+    @Query("SELECT * from recipes")
+    fun getRecipes():List<Recipe>
+
+    @Query("SELECT * from recipes where id =:id ")
+    fun getRecipeUsingID(id:Int):Recipe
+
+    @Query("UPDATE recipes SET isFavourite = :isFavorite WHERE id = :recipeId")
+    suspend fun updateFavorite(recipeId: Int, isFavorite: Boolean)
+
+    @Query("UPDATE recipes SET image = :image WHERE id = :recipeId")
+    suspend fun updateImage(recipeId: Int, image: String)
+
+
 }

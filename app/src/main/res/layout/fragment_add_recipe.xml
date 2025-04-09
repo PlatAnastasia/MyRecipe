@@ -29,25 +29,13 @@
         android:layout_marginTop="16dp" />
 
     <EditText
-        android:id="@+id/etDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Short Description"
-        android:inputType="text"
-        android:minLines="2"
-        app:layout_constraintTop_toBottomOf="@id/etRecipeTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp" />
-
-    <EditText
         android:id="@+id/etIngredients"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Ingredients"
         android:inputType="textMultiLine"
         android:minLines="4"
-        app:layout_constraintTop_toBottomOf="@id/etDescription"
+        app:layout_constraintTop_toBottomOf="@id/etRecipeTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
@@ -56,7 +44,7 @@
         android:id="@+id/etInstructions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Instructions"
+        android:hint="Short Description"
         android:inputType="textMultiLine"
         android:minLines="6"
         app:layout_constraintTop_toBottomOf="@id/etIngredients"
