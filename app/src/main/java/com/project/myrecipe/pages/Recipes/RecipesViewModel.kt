@@ -56,16 +56,7 @@ class RecipesViewModel @Inject constructor(
         }
     }
 
-    fun updateImage(id:Int,image:String){
-        viewModelScope.launch {
-            RecipesInteractor.updateImage(id,image).collect { result ->
-                when (result) {
-                    UpdateImage.Empty -> TODO()
-                    is UpdateImage.Success -> { _recipe.value = result.recipe}
-                }
-            }
-        }
-    }
+
 
 
 }

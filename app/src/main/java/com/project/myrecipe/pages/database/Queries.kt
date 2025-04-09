@@ -24,5 +24,9 @@ interface RecipesDao {
     @Query("UPDATE recipes SET image = :image WHERE id = :recipeId")
     suspend fun updateImage(recipeId: Int, image: String)
 
+    @Query("SELECT * FROM recipes WHERE isFavourite = 1")
+    suspend fun getFavRecipes(): List<Recipe>
+
+
 
 }

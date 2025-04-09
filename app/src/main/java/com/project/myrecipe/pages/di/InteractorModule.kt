@@ -2,6 +2,8 @@ package com.project.myrecipe.pages.di
 
 import com.project.myrecipe.pages.AddRecipe.AddRecipeInteractor
 import com.project.myrecipe.pages.AddRecipe.AddRecipeInteractorImpl
+import com.project.myrecipe.pages.Favourites.FaivouritesInteractor
+import com.project.myrecipe.pages.Favourites.FaivouritesInteractorImpl
 import com.project.myrecipe.pages.Recipes.RecipesInteractor
 import com.project.myrecipe.pages.Recipes.RecipesInteractorImpl
 import com.project.myrecipe.pages.mainMenu.MainMenuInteractor
@@ -25,7 +27,7 @@ class InteractorModule {
     @Provides
     fun provideRecipesInteractor(impl: RecipesInteractorImpl): RecipesInteractor = impl
 
-//    @Provides
-//    fun provideFavouritesInteractor(impl: FaivouritesInteractorImpl):FaivouritesInteractor = impl
+    @Provides
+    fun provideFavouritesInteractor(impl: FaivouritesInteractorImpl): FaivouritesInteractor = impl
 
 }

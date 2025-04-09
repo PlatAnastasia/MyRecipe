@@ -7,6 +7,7 @@ import com.project.myrecipe.pages.database.Ιngredients
 import javax.inject.Inject
 
 interface RecipeRepo{
+    suspend fun getFavRecipes():List<Recipe>
     suspend fun saveRecipe(recipe: Recipe)
     suspend fun getRecipes():List<Recipe>
     suspend fun updateFavorite(id:Int,isFavourite:Boolean)
@@ -16,6 +17,14 @@ interface RecipeRepo{
 class RecipeRepoImpl @Inject constructor(
     private val dao: RecipesDao
 ): RecipeRepo{
+    override suspend fun getFavRecipes(): List<Recipe> {
+      return  try {
+          dao.getFavRecipes()
+        }catch (ex: Exception) {
+            emptyList()
+        }
+    }
+
     override suspend fun saveRecipe( recipe: Recipe) {
         try {
             dao.insertNewRecipe(recipe)

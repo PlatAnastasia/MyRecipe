@@ -15,7 +15,7 @@ interface RecipesInteractor {
     fun getAllRecipes(): Flow<GetRecipes>
 
     fun updateFavouriteRecipe(id:Int,isFav:Boolean): Flow<UpdateFav>
-    fun   updateImage(id: Int,image:String): Flow<UpdateImage>
+
 }
 
 class RecipesInteractorImpl @Inject constructor(
@@ -41,15 +41,6 @@ class RecipesInteractorImpl @Inject constructor(
     }.safeAsync{
         UpdateFav.Empty
     }
-
-    override fun updateImage(id: Int, image: String): Flow<UpdateImage> = flow<UpdateImage> {
-        recipeRepo.updateImage(id,image)
-        val updatedList= recipeRepo.getRecipes()
-        emit(UpdateImage.Success(updatedList.toDomainList()))
-    }.safeAsync{
-        UpdateImage.Empty
-    }
-
 
 }
 

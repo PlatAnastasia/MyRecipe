@@ -67,7 +67,7 @@ class AddRecipe : Fragment() {
                             binding.etIngredients.setText(it.ingredients)
                             binding.etRecipeTitle.setText(it.title)
                             binding.etInstructions.setText(it.description)
-
+                            binding.btnSaveRecipe.visibility = View.GONE
                         }
 
                     }
