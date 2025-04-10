@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/mainMenu"
-        android:name="com.project.myrecipe.pages.mainMenu.MainMenu"
+        android:name="com.project.myrecipe.screens.mainMenu.MainMenu"
         android:label="MainMenu">
         <action
             android:id="@+id/action_mainMenu_to_recipes"
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/favourites"
-        android:name="com.project.myrecipe.pages.Favourites.Favourites"
+        android:name="com.project.myrecipe.screens.Favourites.Favourites"
         android:label="Favourites">
         <action
             android:id="@+id/action_favourites_to_mainMenu"
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/recipes"
-        android:name="com.project.myrecipe.pages.Recipes.Recipes"
+        android:name="com.project.myrecipe.screens.Recipes.Recipes"
         android:label="Recipes">
 
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/addRecipe"
-        android:name="com.project.myrecipe.pages.AddRecipe.AddRecipe"
+        android:name="com.project.myrecipe.screens.AddRecipe.AddRecipe"
         android:label="AddRecipe">
 
         <action

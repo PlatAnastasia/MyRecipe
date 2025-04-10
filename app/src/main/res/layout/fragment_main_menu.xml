@@ -8,7 +8,7 @@
     android:padding="24dp"
     android:layout_gravity="center"
     android:textAlignment="center"
-    tools:context="pages.mainMenu.MainMenu">
+    tools:context=".screens.mainMenu.MainMenu">
 
     <TextView
         android:id="@+id/appTitle"
